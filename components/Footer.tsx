@@ -60,6 +60,7 @@ export default function Footer() {
                   src="/logo.png"
                   alt="Marber Learning logo"
                   fill
+                  sizes="40px"
                   className="object-contain brightness-0 invert"
                 />
               </div>
