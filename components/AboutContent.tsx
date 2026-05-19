@@ -1,7 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Link from "next/link";
+
+const ServiceAreaMap = dynamic(() => import("./ServiceAreaMap"), { ssr: false });
 import {
   ArrowRight,
   Target,
@@ -22,7 +25,7 @@ const HERO_SUB =
 
 const STORY_TITLE = "Our Story";
 const STORY_BODY =
-  "Marber Learning Foundation was founded with a single belief: every child deserves access to the support they need to succeed. Serving the communities of Alief, Stafford, Sugar Land, Richmond, and Missouri City, we work hand-in-hand with local families to create lasting pathways to academic achievement and lifelong success. We provide personalized tutoring during a child's most formative K–12 years, laying a permanent foundation in reading, math, and self-assurance.";
+  "Marber Learning Foundation was founded with a single belief: every child deserves access to the support they need to succeed. Serving the communities of Alief, Stafford, Sugar Land, Richmond, and Missouri City, we work hand-in-hand with local families and schools to create lasting pathways to academic achievement and lifelong success. We provide personalized tutoring during a child's most formative K–12 years, laying a permanent foundation in reading, math, and self-assurance.";
 
 const MISSION = {
   title: "Our Mission",
@@ -52,7 +55,7 @@ const VALUES = [
     icon: Users,
     title: "Community",
     description:
-      "We partner with families and local organizations to strengthen the communities we serve.",
+      "We partner with families and schools to strengthen the communities we serve.",
   },
   {
     icon: Award,
@@ -66,13 +69,18 @@ const COMMUNITIES = ["Alief", "Stafford", "Sugar Land", "Richmond", "Missouri Ci
 
 const MAP_TITLE = "Our Service Area";
 const MAP_SUB = "Serving families across the Greater Houston area and Fort Bend County.";
-const MAP_SRC = "https://maps.google.com/maps?q=stafford+tx&t=m&z=11&output=embed";
 
 const CEO_EYEBROW = "MEET OUR FOUNDER";
-const CEO_NAME = "[Founder Name]";
+const CEO_NAME = "Marla Cortes";
 const CEO_TITLE = "Founder & Executive Director";
-const CEO_BIO =
-  "Our founder established Marber Learning Foundation with a deep commitment to educational equity and a vision of a Houston where every child has the resources they need to thrive. Their passion for community-driven learning is the heart of everything we do.";
+const CEO_BIO = [
+  "As the Founder of the Marber Learning Foundation, Marla Cortes is dedicated to closing academic gaps for K–12 students across Alief, Stafford, Sugar Land, Richmond, and Missouri City. A seasoned educator with over 20 years of experience in secondary mathematics and ESL, Marla built the foundation on the belief that every child deserves a solid foundation in reading, math, and self-assurance, regardless of background.",
+  "Marla earned her B.S. in Math from the University of St. Thomas and holds a Region IV certification (Grades 6–12). Her seven years of classroom instruction span the core high school curriculum, including Algebra I, Geometry, and Algebra II. She is particularly known for her work in Mathematical Models with Applications (MMA), where she helps students connect complex concepts to real-world scenarios such as personal finance and statistics — transforming \"classroom math\" into essential life skills.",
+  "With 15 years of leadership as an ESL Department Chair and Specialist, Marla has a unique ability to identify knowledge gaps caused by language barriers or \"math anxiety.\" This expertise is central to the Marber Learning Foundation's mission: providing high-quality, personalized tutoring that bridges the gap between home and school.",
+  "Marla is driven by the \"light bulb\" moment — the instant a student moves from frustration to mastery. Her goal is to ensure that families throughout Fort Bend County and the Greater Houston area have equitable access to the mentorship and resources needed for their children to excel academically, socially, and emotionally.",
+];
+const CEO_QUOTE =
+  "Watching a student gain the confidence to thrive is my greatest professional satisfaction. At Marber, we aren't just tutoring; we are building pathways to lifelong success.";
 
 const CTA_HEADLINE = "Ready to Make a Difference?";
 const CTA_SUB =
@@ -215,16 +223,7 @@ export default function AboutContent() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="rounded-3xl overflow-hidden shadow-sm border border-primary/10"
           >
-            <iframe
-              src={MAP_SRC}
-              width="100%"
-              height="420"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Marber Learning Foundation service area map"
-            />
+            <ServiceAreaMap />
           </motion.div>
         </div>
       </section>
@@ -319,24 +318,31 @@ export default function AboutContent() {
             <p className="text-accent-mint font-semibold text-sm tracking-widest uppercase mb-8 text-center">
               {CEO_EYEBROW}
             </p>
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center gap-8">
-              <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-bg-soft border-4 border-primary/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <svg
-                  viewBox="0 0 120 120"
-                  className="w-24 h-24 opacity-25"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <circle cx="60" cy="44" r="24" fill="#8B7AAB" />
-                  <ellipse cx="60" cy="108" rx="44" ry="32" fill="#8B7AAB" />
-                </svg>
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm flex flex-col gap-8">
+              <div className="flex items-center gap-5">
+                <div className="w-24 h-24 rounded-full border-4 border-primary/20 flex-shrink-0 overflow-hidden">
+                  <img
+                    src="/marlaphoto.jpeg"
+                    alt="Marla Cortes, Founder & Executive Director"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-heading text-2xl md:text-3xl font-bold text-text-dark mb-1">
+                    {CEO_NAME}
+                  </h3>
+                  <p className="text-primary font-semibold">{CEO_TITLE}</p>
+                </div>
               </div>
               <div>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-text-dark mb-1">
-                  {CEO_NAME}
-                </h3>
-                <p className="text-primary font-semibold mb-4">{CEO_TITLE}</p>
-                <p className="text-text-muted leading-relaxed">{CEO_BIO}</p>
+                <div className="flex flex-col gap-3 mb-5">
+                  {CEO_BIO.map((para, i) => (
+                    <p key={i} className="text-text-muted leading-relaxed text-sm">{para}</p>
+                  ))}
+                </div>
+                <blockquote className="border-l-4 border-primary pl-4 italic text-text-dark leading-relaxed">
+                  &ldquo;{CEO_QUOTE}&rdquo;
+                </blockquote>
               </div>
             </div>
           </motion.div>
