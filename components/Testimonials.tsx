@@ -114,19 +114,10 @@ export default function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="font-heading text-xl md:text-2xl italic text-text-dark leading-relaxed mb-8">
+                <blockquote className="font-heading text-xl md:text-2xl italic text-text-dark leading-relaxed">
                   &ldquo;{TESTIMONIALS[current].quote}&rdquo;
                 </blockquote>
 
-                {/* Author */}
-                <footer>
-                  <p className="font-semibold text-text-dark">
-                    {TESTIMONIALS[current].author}
-                  </p>
-                  <p className="text-text-muted text-sm mt-1">
-                    {TESTIMONIALS[current].role}
-                  </p>
-                </footer>
               </motion.div>
             </AnimatePresence>
           </div>
