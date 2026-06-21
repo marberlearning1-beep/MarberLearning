@@ -15,7 +15,7 @@ const SUBJECTS = ["Math", "Science", "English", "History", "Languages", "Test Pr
 
 const CONTACT_INFO = [
   { icon: "✉️", text: "mcortes@marberlearnig.org" },
-  { icon: "📞", text: "(555) 123-4567" },
+  { icon: "📞", text: "(832) 652-6072" },
   { icon: "📍", text: "Serving Houston, TX" },
 ];
 

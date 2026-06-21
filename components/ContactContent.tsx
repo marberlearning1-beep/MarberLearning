@@ -22,8 +22,8 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "(832) 555-0123",
-    href: "tel:+18325550123",
+    value: "(832) 652-6072",
+    href: "tel:+18326526072",
   },
   {
     icon: Clock,
@@ -232,7 +232,7 @@ export default function ContactContent() {
                         type="tel"
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="(832) 555-0100"
+                        placeholder="(832) 652-6072"
                         className={INPUT_CLASS}
                       />
                     </div>
