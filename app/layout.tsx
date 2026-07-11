@@ -15,6 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://marberlearning.org"),
   title: "Marber Learning — Personalized K-12 Tutoring",
   description:
     "In-person tutoring for K-12 students. Certified tutors, personalized plans, and flexible scheduling. Book a free consultation today.",
