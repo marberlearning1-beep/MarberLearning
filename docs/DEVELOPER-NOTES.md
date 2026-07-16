@@ -81,8 +81,6 @@ Fonts: `font-heading` (Playfair Display), `font-sans` (Inter) — loaded via `ne
 
 `components/ContactContent.tsx` renders the form; submissions POST to `app/api/contact/route.ts`, which sends an email via Zoho SMTP using the `ZOHO_EMAIL_USER`/`ZOHO_EMAIL_PASSWORD` credentials. There is no database — every submission is a direct email, nothing is stored.
 
-**Open item to confirm with the client:** the original project proposal lists the recipient as `mcortes@marberlearnig.org` (note: missing an "n" in "learning"), but the code currently sends from/to `info@marberlearning.org`. Confirm the intended recipient address before treating either as final.
-
 ## Deployment
 
 - **Code hosting:** `github.com/marberlearning/Marber-Learning` — push here for changes to go live.

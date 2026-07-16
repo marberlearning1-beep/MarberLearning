@@ -65,25 +65,25 @@ export default function Footer() {
                 />
               </div>
             </Link>
-            <p className="text-text-muted text-sm leading-relaxed max-w-xs">{TAGLINE}</p>
+            <p className="text-bg-cream/70 text-sm leading-relaxed max-w-xs">{TAGLINE}</p>
             <div className="flex gap-4 mt-1">
               <a
                 href="#"
-                className="text-text-muted hover:text-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 rounded"
+                className="text-bg-cream/70 hover:text-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 rounded"
                 aria-label="Facebook"
               >
                 <FacebookIcon />
               </a>
               <a
                 href="#"
-                className="text-text-muted hover:text-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 rounded"
+                className="text-bg-cream/70 hover:text-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 rounded"
                 aria-label="Instagram"
               >
                 <InstagramIcon />
               </a>
               <a
                 href="#"
-                className="text-text-muted hover:text-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 rounded"
+                className="text-bg-cream/70 hover:text-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 rounded"
                 aria-label="X (Twitter)"
               >
                 <XIcon />
@@ -101,7 +101,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-text-muted hover:text-primary-light text-sm transition-colors duration-200 focus:outline-none focus:underline"
+                    className="text-bg-cream/70 hover:text-primary-light text-sm transition-colors duration-200 focus:outline-none focus:underline"
                   >
                     {label}
                   </Link>
@@ -118,7 +118,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {SUBJECTS.map((subject) => (
                 <li key={subject}>
-                  <span className="text-text-muted text-sm">{subject}</span>
+                  <span className="text-bg-cream/70 text-sm">{subject}</span>
                 </li>
               ))}
             </ul>
@@ -131,7 +131,7 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3">
               {CONTACT_INFO.map(({ icon, text }) => (
-                <li key={text} className="flex items-start gap-2.5 text-text-muted text-sm">
+                <li key={text} className="flex items-start gap-2.5 text-bg-cream/70 text-sm">
                   <span aria-hidden="true">{icon}</span>
                   <span>{text}</span>
                 </li>
@@ -142,7 +142,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 text-center">
-          <p className="text-text-muted text-sm">{COPYRIGHT}</p>
+          <p className="text-bg-cream/60 text-sm">{COPYRIGHT}</p>
         </div>
       </div>
     </footer>
